@@ -15,13 +15,17 @@ import java.util.Scanner;
 public class criptografia {
 
     public static void main(String[] args) {
-
+        
+        //Creamos el objeto Scanner, para poder introducir datos por teclado
         Scanner teclado = new Scanner(System.in);
+        //Creamos el objeto Random, para poder generar caracteres aleatorios
         Random random = new Random();
 
+        //Declaramos las variables
         boolean repetir = true;
         int eleccion;
 
+        //Este do while nos permite repetir el código hasta que el usuario salga
         do {
             System.out.println("¿Que deseas realizar?");
             System.out.println("1.- Cifrar");
@@ -30,24 +34,28 @@ public class criptografia {
 
             eleccion = teclado.nextInt();
 
+            
             switch (eleccion) {
                 case 1:
 
                     System.out.println("Tu selección: " + eleccion);
 
                     String palabraCifrar = "";
-
+                    
+                    //Pedimos al usuario que introduzca la letra a cifrar
                     System.out.println("Introduce la palabra a cifrar: ");
                     palabraCifrar = teclado.next();
-
+                    //Con el toUpperCase los caracteres introducidos por el usuario se transforman en mayuscula
                     palabraCifrar = palabraCifrar.toUpperCase();
-
+                    
+                    //Creamos un array
                     char cadenaCifrar[];
-
+                    
+                    //Transformamos el array creado en la palabra introducida por el usuario
                     cadenaCifrar = palabraCifrar.toCharArray();
 
                     System.out.print("Imagen espectacular:");
-
+                    
                     for (int i = cadenaCifrar.length - 1; i >= 0; i--) {
                         System.out.print(cadenaCifrar[i]);
                     }
@@ -80,7 +88,9 @@ public class criptografia {
                     System.out.println("");
 
                     System.out.print("Cadena cifrada: ");
-
+                    
+                    //Generamos dos letras aleatorias y comprobamos si son vocales para transformarlas en su correspondiente número
+                    //Estas letras aleatorias se situaran al principio uno y al final la otra
                     char letraMayus = (char) (random.nextInt(26) + 'A');
                     char letraMayus2 = (char) (random.nextInt(26) + 'A');
 
@@ -134,14 +144,15 @@ public class criptografia {
                     System.out.println("Tu selección: " + eleccion);
 
                     String palabraDescifrar = "";
-
+                    
+                    //Pedimos al usuario que introduzca la letra a descifrar
                     System.out.println("Introduce la palabra a cifrar: ");
                     palabraDescifrar = teclado.next();
-
+                    //Con el toUpperCase los caracteres introducidos por el usuario se transforman en mayuscula
                     palabraDescifrar = palabraDescifrar.toUpperCase();
-
+                    //Creamos un array
                     char cadenaDescifrar[];
-
+                    //Transformamos el array creado en la palabra introducida por el usuario
                     cadenaDescifrar = palabraDescifrar.toCharArray();
 
                     System.out.print("Cadena cifrada: ");
@@ -187,6 +198,7 @@ public class criptografia {
                     break;
 
                 case 3:
+                    //En caso de que el usuario quiera salir, pulsara en 3 y escribira "Si" para salir.
                     String salir;
                     System.out.println("¿Quieres salir?");
 
