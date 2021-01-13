@@ -49,15 +49,22 @@ public class criptografia {
                     palabraCifrar = palabraCifrar.toUpperCase();
                     
                     //Creamos un array
-                    char cadenaCifrar[];
+                    char [] cadenaCifrar;
+                    
                     
                     //Transformamos el array creado en la palabra introducida por el usuario
                     cadenaCifrar = palabraCifrar.toCharArray();
 
                     System.out.print("Imagen espectacular:");
                     
+                    char [] arrayInvertido = new char [cadenaCifrar.length];
+                    int contador=0;
+                    
                     for (int i = cadenaCifrar.length - 1; i >= 0; i--) {
                         System.out.print(cadenaCifrar[i]);
+                        arrayInvertido[contador]=cadenaCifrar[i];
+                        contador++;
+                        
                     }
 
                     System.out.println("");
